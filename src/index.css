@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  font-family: Arial, sans-serif;
+  color: white;
+  margin: 0;
+  padding: 0;
+  background-color: #1e1e1e;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  @apply flex items-start justify-between w-[1440px];
+}
+.buttons-container {
+  @apply mr-[20px] text-center;
+}
+h4 {
+  @apply text-[12px] text-white mb-[5px] text-center;
+}
+button {
+  @apply block w-[140px] p-1 border-none bg-[#f1ee0b] text-black text-[10px] cursor-pointer rounded hover:bg-[#838107];
+}
+
+iframe {
+  @apply border-none w-[1250px] h-[850px] active:block;
+}
+
+.report-banner {
+  @apply bg-[#c21807] text-white mt-[5px] text-center p-[5px] mb-[5px] w-[1550px];
+}
+.report-banner.active {
+  display: block;
+}
+.other-reports-container {
+  @apply ml-[20px] text-center;
+}
+footer {
+  @apply w-[100%] text-center bg-[#130303] py-[10px];
+}
+
+footer p {
+  @apply text-[12px] text-white m-0;
+}
+
+footer a {
+  @apply text-blue-800 no-underline;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
