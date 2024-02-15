@@ -14,9 +14,7 @@ const App = () => {
   return (
     <div className="w-[100vw]">
       <div className="flex flex-col justify-center items-center">
-        <div className="report-banner" id="reportBanner">
-          IS Ops PowerBI Dashboard
-        </div>
+        <div className="report-banner">IS Ops PowerBI Dashboard</div>
 
         <div className="container">
           <div>

@@ -2,7 +2,13 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+        },
+      },
+    },
   },
   plugins: [],
 };

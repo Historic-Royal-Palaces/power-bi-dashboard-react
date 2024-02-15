@@ -6,6 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --muted: 240 3.7% 15.9%;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,7 +23,7 @@ body {
   color: white;
   margin: 0;
   padding: 0;
-  background-color: #1e1e1e;
+  background-color: hsl(20, 14.3%, 4.1%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,10 +36,10 @@ body {
   @apply mr-[20px] text-center;
 }
 h4 {
-  @apply text-[12px] text-white mb-[5px] text-center;
+  @apply text-[12px] mb-[5px] text-center;
 }
 button {
-  @apply block w-[140px] p-1 border-none bg-[#f1ee0b] text-black text-[10px] cursor-pointer rounded hover:bg-[#838107];
+  @apply block w-[170px] p-1 border-none bg-[#6c757d] text-white text-[14px] cursor-pointer rounded hover:bg-[#5a6268];
 }
 
 iframe {
@@ -46,7 +47,7 @@ iframe {
 }
 
 .report-banner {
-  @apply bg-[#c21807] text-white mt-[5px] text-center p-[5px] mb-[5px] w-[1550px];
+  @apply bg-muted text-white mt-[5px] text-center p-[5px] mb-[5px] w-[1550px] rounded-lg;
 }
 .report-banner.active {
   display: block;
@@ -55,7 +56,7 @@ iframe {
   @apply ml-[20px] text-center;
 }
 footer {
-  @apply w-[100%] text-center bg-[#130303] py-[10px];
+  @apply w-[100%] text-center bg-muted py-[10px];
 }
 
 footer p {
@@ -63,7 +64,7 @@ footer p {
 }
 
 footer a {
-  @apply text-blue-800 no-underline;
+  @apply text-[#007bff] hover:text-[#0069d9] no-underline;
 }
 
 @layer utilities {

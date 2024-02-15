@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Button from './Button';
-import { IoIosArrowDown } from 'react-icons/io';
+import { IoIosArrowDown, IoIosCloseCircle } from 'react-icons/io';
 
 const ButtonGroup = ({ buttonData, onItemClick }) => {
   const [openCategory, setOpenCategory] = useState(null);
@@ -14,10 +14,17 @@ const ButtonGroup = ({ buttonData, onItemClick }) => {
       {buttonData.map((category, index) => (
         <div key={index}>
           <h2
-            className="flex justify-between items-center cursor-pointer bg-amber-400 my-2 py-2 px-4 text-center rounded-lg w-full"
+            className={`flex justify-between items-center cursor-pointer bg-muted text-white my-2 py-2 px-4 text-center rounded-lg w-full hover:bg-[#3069a7] ${
+              openCategory === category.title ? 'bg-[#3069a7]' : ''
+            }`}
             onClick={() => toggleDropdown(category.title)}
           >
-            {category.title} <IoIosArrowDown />
+            {category.title}
+            {openCategory === category.title ? (
+              <IoIosCloseCircle />
+            ) : (
+              <IoIosArrowDown />
+            )}
           </h2>
           {openCategory === category.title && (
             <ul className="flex flex-col justify-center items-center">
