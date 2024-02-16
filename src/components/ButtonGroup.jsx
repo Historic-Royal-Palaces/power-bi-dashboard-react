@@ -14,7 +14,7 @@ const ButtonGroup = ({ buttonData, onItemClick }) => {
       {buttonData.map((category, index) => (
         <div key={index}>
           <h2
-            className={`flex justify-between items-center cursor-pointer bg-muted text-white my-2 py-2 px-4 text-center rounded-lg w-full hover:bg-[#3069a7] ${
+            className={` ${
               openCategory === category.title ? 'bg-[#3069a7]' : ''
             }`}
             onClick={() => toggleDropdown(category.title)}
@@ -33,6 +33,7 @@ const ButtonGroup = ({ buttonData, onItemClick }) => {
                   <Button
                     label={button.label}
                     url={button.src}
+                    itemPath={button.fullPath}
                     onClick={onItemClick}
                   />
                 </li>

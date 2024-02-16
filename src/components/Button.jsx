@@ -1,6 +1,6 @@
-const Button = ({ label, url, onClick }) => {
+const Button = ({ label, url, onClick, itemPath }) => {
   const handleClick = () => {
-    onClick(url);
+    onClick(url, itemPath);
   };
 
   return <button onClick={handleClick}>{label}</button>;

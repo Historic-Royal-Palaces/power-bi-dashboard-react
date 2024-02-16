@@ -7,6 +7,7 @@ const buttonData = [
         label: 'Service Desk Report',
         title: 'IS Ops Service Desk',
         src: 'https://app.powerbi.com/view?r=eyJrIjoiZDEyYWI2OTctOWQ0MS00ZGE1LTg4N2YtZTRmNDQyNDI1MTYzIiwidCI6Ijg0YjhiMDNiLTAyMTYtNGU4MC05NTNjLTA2NTVkMmIxMzMyMSIsImMiOjh9',
+        fullPath: 'https://google.com',
         active: true,
       },
       {
@@ -92,7 +93,6 @@ const buttonData = [
         src: 'https://app.powerbi.com/view?r=eyJrIjoiZjYyOGRiY2QtYzBjOC00YTdjLWJlMmEtNzFjNWM4M2ZkNThjIiwidCI6Ijg0YjhiMDNiLTAyMTYtNGU4MC05NTNjLTA2NTVkMmIxMzMyMSIsImMiOjh9',
         active: false,
       },
-      ,
     ],
   },
   // Section: IS SLT Reports
@@ -111,7 +111,6 @@ const buttonData = [
         src: 'https://app.powerbi.com/view?r=eyJrIjoiYTI2NTFmOGMtOWJiYi00NzJlLTkyMmItMjQzNmI4NjFjYmQzIiwidCI6Ijg0YjhiMDNiLTAyMTYtNGU4MC05NTNjLTA2NTVkMmIxMzMyMSIsImMiOjh9',
         active: false,
       },
-      ,
     ],
   },
   // Section: Cyber Reports
@@ -130,7 +129,6 @@ const buttonData = [
         src: 'https://app.powerbi.com/view?r=eyJrIjoiMGQ2YmRjZGItNWJiYS00NTM0LWIxMzYtYWNlZjIwOWMyMjEyIiwidCI6Ijg0YjhiMDNiLTAyMTYtNGU4MC05NTNjLTA2NTVkMmIxMzMyMSIsImMiOjh9',
         active: false,
       },
-      ,
     ],
   },
   // Section: Staff & Budget Reports

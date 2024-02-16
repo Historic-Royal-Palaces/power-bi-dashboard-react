@@ -24,16 +24,13 @@ body {
   margin: 0;
   padding: 0;
   background-color: hsl(20, 14.3%, 4.1%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
-.container {
-  @apply flex items-start justify-between w-[1440px];
-}
 .buttons-container {
   @apply mr-[20px] text-center;
+}
+h2 {
+  @apply flex justify-between items-center cursor-pointer bg-muted text-white my-2 py-2 px-4 text-center rounded-lg w-full hover:bg-[#3069a7];
 }
 h4 {
   @apply text-[12px] mb-[5px] text-center;
@@ -43,11 +40,11 @@ button {
 }
 
 iframe {
-  @apply border-none w-[1250px] h-[850px] active:block;
+  @apply border-none w-full h-[850px] active:block;
 }
 
 .report-banner {
-  @apply bg-muted text-white mt-[5px] text-center p-[5px] mb-[5px] w-[1550px] rounded-lg;
+  @apply bg-muted text-white mt-[5px] text-center p-[5px] mb-[5px] rounded-lg;
 }
 .report-banner.active {
   display: block;
@@ -56,7 +53,7 @@ iframe {
   @apply ml-[20px] text-center;
 }
 footer {
-  @apply w-[100%] text-center bg-muted py-[10px];
+  @apply text-center bg-muted py-[10px];
 }
 
 footer p {
