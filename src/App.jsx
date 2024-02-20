@@ -2,6 +2,7 @@ import { useState } from 'react';
 import ButtonGroup from './components/ButtonGroup';
 import Footer from './components/Footer';
 import buttonData from './data/buttonData';
+import dashboardData from './data/dashboardData';
 import Iframe from './components/Iframe';
 
 const App = () => {
@@ -28,6 +29,7 @@ const App = () => {
           </a>
           <ButtonGroup
             buttonData={buttonData}
+            dashboardData={dashboardData}
             onItemClick={handleButtonClick}
           />
         </div>
