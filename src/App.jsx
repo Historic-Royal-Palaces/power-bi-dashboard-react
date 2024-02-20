@@ -13,6 +13,8 @@ const App = () => {
     setFullPath(itemPath);
   };
 
+  console.log(JSON.stringify(buttonData))
+
   return (
     <div className="absolute left-0 w-full">
       <div className="report-banner">IS Ops PowerBI Dashboard</div>
