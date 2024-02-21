@@ -3,42 +3,44 @@ import Button from './Button';
 import { IoIosArrowDown, IoIosCloseCircle } from 'react-icons/io';
 
 const ButtonGroup = ({ onItemClick, dashboardData }) => {
-  const [openCategory, setOpenCategory] = useState(null);
+  const [openCategories, setOpenCategories] = useState({});
 
-  const toggleDropdown = (categoryTitle) => {
-    setOpenCategory(openCategory === categoryTitle ? null : categoryTitle);
+  const toggleCategory = (group) => {
+    setOpenCategories((prevOpenCategories) => ({
+      ...prevOpenCategories,
+      [group]: !prevOpenCategories[group],
+    }));
   };
 
+  const uniqueCategories = [
+    ...new Set(dashboardData.map((button) => button.group)),
+  ];
+
   return (
-    <div className="mt-4">
-      {dashboardData.map((category, index) => (
+    <div>
+      {uniqueCategories.map((group, index) => (
         <div key={index}>
           <h2
-            className={` ${
-              openCategory === category.buttons[0].group ? 'bg-[#3069a7]' : ''
-            }`}
-            onClick={() => toggleDropdown(category.buttons[0].group)}
+            className={openCategories[group] ? 'bg-[#3069a7]' : ''}
+            onClick={() => toggleCategory(group)}
           >
-            {category.buttons[0].group}
-            {openCategory === category.buttons[0].group ? (
-              <IoIosCloseCircle />
-            ) : (
-              <IoIosArrowDown />
-            )}
+            {group}
+            {openCategories[group] ? <IoIosCloseCircle /> : <IoIosArrowDown />}
           </h2>
-          {openCategory === category.buttons[0].group && (
-            <ul className="flex flex-col justify-center items-center">
-              {category.buttons.map((button, buttonIndex) => (
-                <li className="m-1" key={buttonIndex}>
+          {openCategories[group] && (
+            <div className="flex flex-col items-center justify-center">
+              {dashboardData
+                .filter((btn) => btn.group === group)
+                .map((btn, btnIndex) => (
                   <Button
-                    label={button.label}
-                    url={button.src}
-                    itemPath={button.fullPath}
+                    key={btnIndex}
+                    label={btn.label}
                     onClick={onItemClick}
+                    url={btn.src}
+                    itemPath={btn.itemPath}
                   />
-                </li>
-              ))}
-            </ul>
+                ))}
+            </div>
           )}
         </div>
       ))}

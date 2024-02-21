@@ -3,7 +3,11 @@ const Button = ({ label, url, onClick, itemPath }) => {
     onClick(url, itemPath);
   };
 
-  return <button onClick={handleClick}>{label}</button>;
+  return (
+    <button className="my-1" onClick={handleClick}>
+      {label}
+    </button>
+  );
 };
 
 export default Button;
