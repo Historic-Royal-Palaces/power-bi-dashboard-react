@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import Button from './Button';
+import ButtonList from './ButtonList';
 import { IoIosArrowDown, IoIosCloseCircle } from 'react-icons/io';
 
-const ButtonGroup = ({ onItemClick, dashboardData }) => {
+const ButtonGroup = ({ onItemClick, data }) => {
   const [openCategories, setOpenCategories] = useState({});
 
   const toggleCategory = (group) => {
@@ -12,14 +12,12 @@ const ButtonGroup = ({ onItemClick, dashboardData }) => {
     }));
   };
 
-  const uniqueCategories = [
-    ...new Set(dashboardData.map((button) => button.group)),
-  ];
+  const uniqueCategories = [...new Set(data.map((button) => button.group))];
 
   return (
-    <div>
+    <div className="mt-2">
       {uniqueCategories.map((group, index) => (
-        <div key={index}>
+        <div key={index} className="mt-2">
           <h2
             className={openCategories[group] ? 'bg-[#3069a7]' : ''}
             onClick={() => toggleCategory(group)}
@@ -29,17 +27,30 @@ const ButtonGroup = ({ onItemClick, dashboardData }) => {
           </h2>
           {openCategories[group] && (
             <div className="flex flex-col items-center justify-center">
-              {dashboardData
+              {data
                 .filter((btn) => btn.group === group)
-                .map((btn, btnIndex) => (
-                  <Button
-                    key={btnIndex}
-                    label={btn.label}
-                    onClick={onItemClick}
-                    url={btn.src}
-                    itemPath={btn.itemPath}
-                  />
-                ))}
+                .map((btn, btnIndex) =>
+                  btn.group !== 'Other Links' ? (
+                    <ButtonList
+                      key={btnIndex}
+                      label={btn.label}
+                      onClick={onItemClick}
+                      url={btn.src}
+                      itemPath={btn.fullPath}
+                      title={btn.title}
+                    />
+                  ) : (
+                    <ButtonList
+                      key={btnIndex}
+                      itemPath={btn.fullPath}
+                      title={btn.title}
+                    >
+                      <a href={btn.fullPath} target="_blank">
+                        {btn.label}
+                      </a>
+                    </ButtonList>
+                  )
+                )}
             </div>
           )}
         </div>

@@ -30,7 +30,7 @@ body {
   @apply mr-[20px] text-center;
 }
 h2 {
-  @apply flex justify-between items-center cursor-pointer bg-muted text-white my-2 py-2 px-4 text-center rounded-lg w-full hover:bg-[#3069a7];
+  @apply flex justify-between items-center cursor-pointer bg-muted text-white my-2 py-2 px-4 text-center rounded-lg border-2 w-full hover:bg-[#3069a7];
 }
 h4 {
   @apply text-[12px] mb-[5px] text-center;

@@ -1,13 +1,5 @@
-const Button = ({ label, url, onClick, itemPath }) => {
-  const handleClick = () => {
-    onClick(url, itemPath);
-  };
-
-  return (
-    <button className="my-1" onClick={handleClick}>
-      {label}
-    </button>
-  );
-};
+function Button() {
+  return <div>Button</div>;
+}
 
 export default Button;
