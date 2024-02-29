@@ -35,8 +35,13 @@ h2 {
 h4 {
   @apply text-[12px] mb-[5px] text-center;
 }
+
+a {
+  @apply hover:text-white;
+}
+
 button {
-  @apply block w-[170px] p-1 border-none bg-[#6c757d] text-white text-[14px] cursor-pointer rounded hover:bg-[#5a6268];
+  @apply block w-[170px] p-2 border bg-[#5e7080] text-white text-[14px] cursor-pointer rounded hover:bg-[#5a6268] m-1;
 }
 
 iframe {
@@ -62,6 +67,10 @@ footer p {
 
 footer a {
   @apply text-[#007bff] hover:text-[#0069d9] no-underline;
+}
+
+.active {
+  @apply bg-white text-black hover:text-white;
 }
 
 @layer utilities {

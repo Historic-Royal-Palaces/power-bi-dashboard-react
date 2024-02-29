@@ -3,12 +3,10 @@ import ButtonGroup from './components/ButtonGroup';
 import Footer from './components/Footer';
 import Iframe from './components/Iframe';
 import Spinner from './components/Spinner';
-import { Button } from 'semantic-ui-react';
 
 const App = () => {
   const [title, setTitle] = useState('IS Ops PowerBI Dashboard');
   const [data, setData] = useState(null);
-  const [isActive, setIsActive] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [iframeUrl, setIframeUrl] = useState(
@@ -22,7 +20,6 @@ const App = () => {
     setIframeUrl(url);
     setFullPath(itemPath);
     setTitle(title);
-    setIsActive((active) => (active = !active));
   };
 
   const fetchData = async () => {
@@ -60,18 +57,17 @@ const App = () => {
 
           <div className="flex justify-around w-full">
             <div className="w-[12%] flex flex-col justify-between">
-              <ButtonGroup
-                data={data}
-                onItemClick={handleButtonClick}
-                isActive={isActive}
-              />
-              <div className="mb-10">
-                <Button inverted>
-                  <a href={path} target="_blank">
-                    Open Web Version
-                  </a>
-                </Button>
-              </div>
+              <ButtonGroup data={data} onItemClick={handleButtonClick} />
+              <button className="block w-[228px] bg-muted">
+                <a
+                  className=" hover:text-gray-200 "
+                  href={path}
+                  target="_blank"
+                >
+                  Open Web Version
+                </a>
+              </button>
+              <div className="mb-10"></div>
             </div>
             <div className="w-[80%]">
               <Iframe src={iframeUrl} />

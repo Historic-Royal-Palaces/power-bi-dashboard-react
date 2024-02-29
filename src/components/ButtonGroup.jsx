@@ -1,9 +1,15 @@
 import { useState } from 'react';
 import ButtonList from './ButtonList';
 import { IoIosArrowDown, IoIosCloseCircle } from 'react-icons/io';
+import OtherButtons from './OtherButtons';
 
 const ButtonGroup = ({ onItemClick, data }) => {
   const [openCategories, setOpenCategories] = useState({});
+  const [activeButton, setActiveButton] = useState(null);
+
+  const handleActivation = (label) => {
+    setActiveButton(label); // Set the active button label
+  };
 
   const toggleCategory = (group) => {
     setOpenCategories((prevOpenCategories) => ({
@@ -38,17 +44,18 @@ const ButtonGroup = ({ onItemClick, data }) => {
                       url={btn.src}
                       itemPath={btn.fullPath}
                       title={btn.title}
+                      isActive={activeButton === btn.label} // Check if the button is active
+                      handleActivation={handleActivation} // Pass the activation handler
                     />
                   ) : (
-                    <ButtonList
+                    <OtherButtons
                       key={btnIndex}
                       itemPath={btn.fullPath}
                       title={btn.title}
-                    >
-                      <a href={btn.fullPath} target="_blank">
-                        {btn.label}
-                      </a>
-                    </ButtonList>
+                      label={btn.label}
+                      isActive={activeButton === btn.label} // Check if the button is active
+                      handleActivation={handleActivation} // Pass the activation handler
+                    ></OtherButtons>
                   )
                 )}
             </div>
